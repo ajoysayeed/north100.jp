@@ -590,7 +590,8 @@ tr:nth-child(even) {
     }
     .aff-row {
         display: flex;
-        align-items: center;
+        align-items: center; 
+        justify-content: space-between;
         background: #fff;
         border: 2px solid #f2d7ee;
         border-radius: 15px;
@@ -598,11 +599,14 @@ tr:nth-child(even) {
         margin-bottom: 15px;
         transition: transform 0.2s;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        gap: 15px;
     }
     .aff-row:hover {
         transform: translateY(-2px);
         border-color: #81698f;
     }
+    
+    
     .aff-logo {
         flex: 0 0 150px;
         text-align: center;
@@ -612,25 +616,72 @@ tr:nth-child(even) {
         height: auto;
         border-radius: 10px;
     }
+
+
     .aff-content {
-        flex: 1;
-        padding: 0 20px;
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .aff-title {
         font-size: 1.4em;
         font-weight: bold;
         color: #0e103d;
         margin-bottom: 5px;
+        line-height: 1.2;
     }
     .aff-bonus {
         color: #493965;
         font-weight: 600;
-        margin-bottom: 10px;
+        font-size: 1.05em;
+        margin-bottom: 5px;
+        line-height: 1.4;
     }
     .aff-stars {
         color: #ffb400;
         font-size: 1.2em;
     }
+
+
+    .aff-promo-section {
+        flex: 0 0 auto; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    .aff-promo-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f4fb;
+        border: 2px dashed #81698f; 
+        color: #493965;
+        padding: 12px 20px; 
+        border-radius: 10px;
+        font-weight: 800; 
+        font-size: 1.1em; 
+        cursor: pointer;
+        transition: all 0.2s;
+        user-select: none;
+        white-space: nowrap; 
+    }
+    .aff-promo-card:hover {
+        background-color: #ece0f0;
+        transform: scale(1.05);
+    }
+    .aff-promo-card:active {
+        transform: scale(0.95);
+    }
+    .aff-promo-card::after {
+        content: '📋';
+        margin-left: 10px;
+        font-size: 1.1em;
+    }
+
+ 
     .aff-action {
         flex: 0 0 200px;
         text-align: right;
@@ -639,24 +690,77 @@ tr:nth-child(even) {
         display: inline-block;
         background: linear-gradient(to right bottom, #493965, #81698f);
         color: white !important;
-        padding: 12px 30px;
+        padding: 14px 25px;
         text-decoration: none !important;
-        border-radius: 25px;
+        border-radius: 30px;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-size: 1em;
+        text-align: center;
+        transition: opacity 0.2s;
+    }
+    .aff-button:hover {
+        opacity: 0.9;
     }
     
+    
     @media (max-width: 768px) {
-        .aff-row { flex-direction: column; text-align: center; }
-        .aff-content { padding: 15px 0; }
-        .aff-action { text-align: center; width: 100%; }
-        .aff-logo { margin-bottom: 10px; }
+        .aff-row { 
+            flex-direction: column; 
+            text-align: center; 
+            padding: 20px 15px;
+        }
+        
+        .aff-logo { 
+            margin-bottom: 10px; 
+            flex: auto;
+            width: 100%;
+        }
+        .aff-logo img {
+            max-width: 200px; 
+            width: 60%;
+        }
+
+        .aff-content { 
+            width: 100%; 
+            padding: 5px 0 15px 0;
+            flex: auto;
+        }
+        
+        
+        .aff-promo-section {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .aff-promo-card {
+            width: 100%; 
+            box-sizing: border-box;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+
+        .aff-action { 
+            width: 100%; 
+            flex: auto;
+            text-align: center; 
+        }
+        
+        
+        .aff-button {
+            display: block;
+            width: 100%; 
+            box-sizing: border-box; 
+            padding: 16px 20px; 
+            font-size: 1.1em; 
+            border-radius: 12px; 
+        }
     }
 </style>
 
 <div class="aff-container">
  
+   
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/BONS-casino.png" alt="BONS" title="BONS">
@@ -666,57 +770,68 @@ tr:nth-child(even) {
             <div class="aff-bonus">最大200%のウェルカムボーナス</div>
             <div class="aff-stars">★★★★★</div>
         </div>
+    
         <div class="aff-action">
             <a href="https://freeseo-tracking.com/SKm2MM?promo=%7Bsubid%7D&sub2=%7Bsub2%7D&sub3=%7Bsub3%7D&sub4=%7Bsub4%7D&sub5=%7Bsub5%7D&sub6=%7Bsub6%7D" class="aff-button" target="_blank" rel="nofollow">ボーナスを獲得する</a>
         </div>
     </div>
 
-    
+
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/joycasino-logo.png" alt="JOYCASINO" title="JOYCASINO">
         </div>
         <div class="aff-content">
             <div class="aff-title">JOYCASINO</div>
-            <div class="aff-bonus">最大100%のウェルカムボーナス+200FS<br>Promo: katsu</div>
+            <div class="aff-bonus">最大100%のウェルカムボーナス+200FS</div>
             <div class="aff-stars">★★★★★</div>
+        </div>
+     
+        <div class="aff-promo-section">
+            <div class="aff-promo-card" onclick="copyPromo(this, 'katsu')">Promo: katsu</div>
         </div>
         <div class="aff-action">
             <a href="https://freeseo-tracking.com/7kq7Qw?promo=%7Bsubid%7D&sub2=%7Bsub2%7D&sub3=%7Bsub3%7D&sub4=%7Bsub4%7D&sub5=%7Bsub5%7D&sub6=%7Bsub6%7D" class="aff-button" target="_blank" rel="nofollow">ボーナスを獲得する</a>
         </div>
     </div>
 
-    
+
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/casino-x-logo.png" alt="CasinoX" title="CasinoX">
         </div>
         <div class="aff-content">
             <div class="aff-title">CasinoX</div>
-            <div class="aff-bonus">最大100%のウェルカムボーナス+200FS<br>Promo: katsu</div>
+            <div class="aff-bonus">最大100%のウェルカムボーナス+200FS</div>
             <div class="aff-stars">★★★★★</div>
+        </div>
+        <div class="aff-promo-section">
+            <div class="aff-promo-card" onclick="copyPromo(this, 'katsu')">Promo: katsu</div>
         </div>
         <div class="aff-action">
             <a href="https://freeseo-tracking.com/zqTrpd?promo=%7Bsubid%7D&sub2=%7Bsub2%7D&sub3=%7Bsub3%7D&sub4=%7Bsub4%7D&sub5=%7Bsub5%7D&sub6=%7Bsub6%7D" class="aff-button" target="_blank" rel="nofollow">ボーナスを獲得する</a>
         </div>
     </div>
 
-   
+
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/ramenbet-casino-logo.png" alt="RAMENBET" title="RAMENBET">
         </div>
         <div class="aff-content">
             <div class="aff-title">RAMENBET</div>
-            <div class="aff-bonus">最大100%のウェルカムボーナス+200FS<br>Promo: katsu</div>
+            <div class="aff-bonus">最大100%のウェルカムボーナス+200FS</div>
             <div class="aff-stars">★★★★★</div>
+        </div>
+        <div class="aff-promo-section">
+            <div class="aff-promo-card" onclick="copyPromo(this, 'katsu')">Promo: katsu</div>
         </div>
         <div class="aff-action">
             <a href="https://freeseo-tracking.com/3TznQ5?promo=%7Bsubid%7D&sub2=%7Bsub2%7D&sub3=%7Bsub3%7D&sub4=%7Bsub4%7D&sub5=%7Bsub5%7D&sub6=%7Bsub6%7D" class="aff-button" target="_blank" rel="nofollow">ボーナスを獲得する</a>
         </div>
     </div>
 
-    
+    <!-- Koifortune -->
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/koifortune.jpg" alt="Koifortune" title="Koifortune">
@@ -731,14 +846,14 @@ tr:nth-child(even) {
         </div>
     </div>
 
-   
+    <!-- Stake -->
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/Stake-logo.jpg" alt="Stake" title="Stake">
         </div>
         <div class="aff-content">
             <div class="aff-title">Stake</div>
-            <div class="aff-bonus">Welcome Bonus</div>
+            <div class="aff-bonus">ウェルカムボーナス 120% + 50 FS</div>
             <div class="aff-stars">★★★★★</div>
         </div>
         <div class="aff-action">
@@ -746,14 +861,14 @@ tr:nth-child(even) {
         </div>
     </div>
 
-   
+    <!-- Konibet -->
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/Konibet-logo.jpg" alt="Konibet" title="Konibet">
         </div>
         <div class="aff-content">
             <div class="aff-title">Konibet</div>
-            <div class="aff-bonus">Welcome Bonus</div>
+            <div class="aff-bonus">ウェルカムボーナス 120% + 50 FS</div>
             <div class="aff-stars">★★★★★</div>
         </div>
         <div class="aff-action">
@@ -761,14 +876,14 @@ tr:nth-child(even) {
         </div>
     </div>
 
-   
+    <!-- BeeBet -->
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/beebet-logo.png" alt="BeeBet" title="BeeBet">
         </div>
         <div class="aff-content">
             <div class="aff-title">BeeBet</div>
-            <div class="aff-bonus">Welcome Bonus</div>
+            <div class="aff-bonus">ウェルカムボーナス 120% + 50 FS</div>
             <div class="aff-stars">★★★★★</div>
         </div>
         <div class="aff-action">
@@ -776,14 +891,14 @@ tr:nth-child(even) {
         </div>
     </div>
 
-    
+    <!-- 1Red -->
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/red-logo.png" alt="1Red" title="1Red">
         </div>
         <div class="aff-content">
             <div class="aff-title">1Red</div>
-            <div class="aff-bonus">Welcome Bonus</div>
+            <div class="aff-bonus">ウェルカムボーナス 120% + 50 FS</div>
             <div class="aff-stars">★★★★★</div>
         </div>
         <div class="aff-action">
@@ -791,14 +906,14 @@ tr:nth-child(even) {
         </div>
     </div>
 
-
+    <!-- Mystino -->
     <div class="aff-row">
         <div class="aff-logo">
             <img src="/Mystino-logo.png" alt="Mystino" title="Mystino">
         </div>
         <div class="aff-content">
             <div class="aff-title">Mystino</div>
-            <div class="aff-bonus">Welcome Bonus</div>
+            <div class="aff-bonus">ウェルカムボーナス 120% + 50 FS</div>
             <div class="aff-stars">★★★★★</div>
         </div>
         <div class="aff-action">
@@ -806,6 +921,28 @@ tr:nth-child(even) {
         </div>
     </div>
 </div>
+
+<script>
+    function copyPromo(element, code) {
+        navigator.clipboard.writeText(code).then(function() {
+            
+            const originalText = element.innerText;
+            element.innerText = "COPIED!"; 
+            element.style.backgroundColor = "#e8f5e9";
+            element.style.borderColor = "#4caf50";
+            element.style.color = "#2e7d32";
+            
+            setTimeout(function() {
+                element.innerText = originalText;
+                element.style.backgroundColor = "#f9f4fb";
+                element.style.borderColor = "#81698f";
+                element.style.color = "#493965";
+            }, 1500);
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    }
+</script>
 <!-- BLOCK: ベラジョンカジノ -->
 <h3 class="wp-block-heading">ベラジョンカジノ</h3>
 <p>ベラジョンカジノは、日本人プレイヤーに人気のオンラインカジノです。銀行振込による入金と出金の両方に対応しています。多くの日本の銀行を利用でき、ネットバンキングからの手続きも簡単です。</p>
